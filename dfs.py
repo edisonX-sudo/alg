@@ -20,7 +20,7 @@ sQueue = deque()
 
 def bfs(root, sword):
     global sQueue
-    add2sQueu(root)
+    add2squeu(root)
     while len(sQueue) != 0:
         i = sQueue.pop()
         print(i)
@@ -31,7 +31,7 @@ def bfs(root, sword):
     return False
 
 
-def add2sQueu(root):
+def add2squeu(root):
     for r in root:
         if not nameSet.has_key(r):
             sQueue.append(r)

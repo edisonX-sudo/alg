@@ -1,8 +1,8 @@
-def arrPlus(arr):
+def arr_plus(arr):
     if len(arr) == 1:
         return arr[0]
-    return arrPlus([arr[0]]) + arrPlus(arr[1:])
+    return arr_plus([arr[0]]) + arr_plus(arr[1:])
 
 
 if __name__ == '__main__':
-    print(arrPlus([1, 2, 3]))
+    print(arr_plus([1, 2, 3]))
