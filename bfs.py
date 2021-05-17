@@ -1,6 +1,6 @@
 from collections import deque
 
-graph = {}
+graph = dict()
 graph["you"] = ["alice", "bob", "claire"]
 
 graph["alice"] = ["peggy"]
@@ -12,15 +12,14 @@ graph["anuj"] = []
 graph["thom"] = []
 graph["jonny"] = []
 
-nameSet = {}
-sQueue = deque()
+name_set = set()
+squeue = deque()
 
 
 def bfs(root, sword):
-    global sQueue
-    add2sQueu(root)
-    while len(sQueue) != 0:
-        i = sQueue.popleft()
+    add2squeue(root)
+    while len(squeue) != 0:
+        i = squeue.popleft()
         print(i)
         if i == sword:
             return True
@@ -29,11 +28,11 @@ def bfs(root, sword):
     return False
 
 
-def add2sQueu(root):
+def add2squeue(root):
     for r in root:
-        if not nameSet.has_key(r):
-            sQueue.append(r)
-            nameSet[r] = "set"
+        if r not in name_set:
+            squeue.append(r)
+            name_set.add(r)
 
 
 if __name__ == '__main__':
